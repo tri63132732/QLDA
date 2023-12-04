@@ -8,7 +8,7 @@ using System.Web;
 namespace _4BroShop.Models.EFModels
 {
 
-    [Table("tb_OrderDetail")]
+    [Table("OrderDetail")]
     public class OrderDetail
     {
         [Key]

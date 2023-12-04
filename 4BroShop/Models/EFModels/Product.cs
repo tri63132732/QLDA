@@ -8,7 +8,7 @@ using System.Web.Mvc;
 
 namespace _4BroShop.Models.EFModels
 {
-    [Table("tb_Product")]
+    [Table("Product")]
     public class Product : CommonAbstract
     {
         public Product()
@@ -23,20 +23,11 @@ namespace _4BroShop.Models.EFModels
         [StringLength(250)]
         public string Title { get; set; }
 
-        [StringLength(250)]
-        public string Alias { get; set; }
-
-        [StringLength(50)]
-        public string ProductCode { get; set; }
-        public string Description { get; set; }
-
         [AllowHtml]
         public string Detail { get; set; }
 
         [StringLength(250)]
         public string Image { get; set; }
-        //giá nhập
-        public decimal OriginalPrice { get; set; }
         //giá bán
         public decimal Price { get; set; }
         //giá sau khi giảm (có thể null)

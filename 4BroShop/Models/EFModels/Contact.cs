@@ -7,7 +7,7 @@ using System.Web;
 
 namespace _4BroShop.Models.EFModels
 {
-    [Table("tb_Contact")]
+    [Table("Contact")]
     public class Contact : CommonAbstract
     {
         [Key]

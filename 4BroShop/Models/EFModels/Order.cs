@@ -7,7 +7,7 @@ using System.Web;
 
 namespace _4BroShop.Models.EFModels
 {
-    [Table("tb_Order")]
+    [Table("Order")]
     public class Order : CommonAbstract
     {
         public Order()

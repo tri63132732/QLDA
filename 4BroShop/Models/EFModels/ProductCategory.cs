@@ -20,9 +20,6 @@ namespace _4BroShop.Models.EFModels
         [StringLength(150)]
         public string Title { get; set; }
         [Required]
-        [StringLength(150)]
-        public string Alias { get; set; }
-        public string Description { get; set; }
         [StringLength(250)]
         public string Icon { get; set; }
         [StringLength(250)]
