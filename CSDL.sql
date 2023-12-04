@@ -27,6 +27,7 @@ CREATE TABLE Product(
 	Image nvarchar(250) NULL,
 	Price decimal(18, 2) NOT NULL,
 	PriceSale decimal(18, 2) NULL,
+	Quantity int NOT NULL,
 	IsHome bit NOT NULL,
 	IsSale bit NOT NULL,
 	IsFeature bit NOT NULL,
