@@ -1,0 +1,25 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/4BroShop/Controllers/AccountController.cs
+/4BroShop/Controllers/HomeController.cs
+/4BroShop/Controllers/ManageController.cs
+/4BroShop/Models/AccountViewModels.cs
+/4BroShop/Models/ManageViewModels.cs
+/4BroShop/Models/IdentityModels.cs
+/4BroShop/favicon.ico
+/4BroShop/packages.config
+/4BroShop/Areas/Admin/AdminAreaRegistration.cs
+/4BroShop/Areas/Admin/Views/web.config
+/4BroShop/Global.asax
+/4BroShop/Global.asax.cs
+/4BroShop/Startup.cs
+/4BroShop/Properties/AssemblyInfo.cs
+/4BroShop/App_Start/BundleConfig.cs
+/4BroShop/App_Start/Startup.Auth.cs
+/4BroShop/App_Start/RouteConfig.cs
+/4BroShop/App_Start/FilterConfig.cs
+/4BroShop/Web.config
+/4BroShop/Web.Debug.config
+/4BroShop/Web.Release.config

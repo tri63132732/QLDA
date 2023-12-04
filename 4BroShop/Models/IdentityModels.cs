@@ -1,6 +1,7 @@
 ﻿using System.Data.Entity;
 using System.Security.Claims;
 using System.Threading.Tasks;
+using _4BroShop.Models.EFModels;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
 
@@ -24,7 +25,27 @@ namespace _4BroShop.Models
             : base("DefaultConnection", throwIfV1Schema: false)
         {
         }
-
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
+            base.OnModelCreating(modelBuilder);
+            //đổi tên bảng
+            modelBuilder.HasDefaultSchema("dbo");
+            modelBuilder.Entity<ApplicationUser>().ToTable("User");
+            modelBuilder.Entity<IdentityRole>().ToTable("Role");
+            modelBuilder.Entity<IdentityUserRole>().ToTable("UserRole");
+            modelBuilder.Entity<IdentityUserClaim>().ToTable("Claim");
+            modelBuilder.Entity<IdentityUserLogin>().ToTable("Login");
+            //đổi tên cột
+            /*modelBuilder.Entity<ApplicationUser>()
+               .Property(u => u.Id)
+               .HasColumnName("UserId");*/
+        }
+        public DbSet<ProductCategory> ProductCategories { get; set; }
+        public DbSet<Product> Products { get; set; }
+        public DbSet<ProductImage> ProductImages { get; set; }
+        public DbSet<Contact> Contacts { get; set; }
+        public DbSet<Order> Orders { get; set; }
+        public DbSet<OrderDetail> OrderDetails { get; set; }
         public static ApplicationDbContext Create()
         {
             return new ApplicationDbContext();
