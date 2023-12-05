@@ -9,7 +9,7 @@ using System.Web.Mvc;
 namespace _4BroShop.Models.EFModels
 {
     [Table("Product")]
-    public class Product : CommonAbstract
+    public class Product
     {
         public Product()
         {
@@ -37,9 +37,9 @@ namespace _4BroShop.Models.EFModels
         public bool IsSale { get; set; }
         public bool IsFeature { get; set; }
         public bool IsActive { get; set; }
-        public int ProductCategoryId { get; set; }
+        public int CategoryId { get; set; }
 
-        public virtual ProductCategory ProductCategory { get; set; }
+        public virtual Category ProductCategory { get; set; }
         public virtual ICollection<ProductImage> ProductImage { get; set; }
         public virtual ICollection<OrderDetail> OrderDetails { get; set; }
     }
