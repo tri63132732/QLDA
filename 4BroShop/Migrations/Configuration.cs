@@ -8,6 +8,7 @@
     using System.Data.Entity;
     using System.Data.Entity.Migrations;
     using System.Linq;
+    using _4BroShop.Models.EFModels;
 
     internal sealed class Configuration : DbMigrationsConfiguration<_4BroShop.Models.ApplicationDbContext>
     {
@@ -38,15 +39,15 @@
 
             List<Product> productsToAddOrUpdate = new List<Product>
             {
-                new Product { Title = "Mì thanh long", Detail = "Chi tiết sản phẩm", Price = 50000, PriceSale = 60000, IsSale = true, IsActive = true, IsFeature = true },
-                new Product { Title = "Cơm xoài", Detail = "Chi tiết sản phẩm", Price = 900000, PriceSale = 65000, IsSale = true, IsActive = true, IsFeature = true },
-                new Product { Title = "Xôi lạnh", Detail = "Chi tiết sản phẩm", Price = 900000, PriceSale = 65000, IsSale = true, IsActive = true, IsFeature = true },
-                new Product { Title = "Kem mắm ruốc", Detail = "Chi tiết sản phẩm", Price = 900000, PriceSale = 65000, IsSale = true, IsActive = true, IsFeature = true },
-                new Product { Title = "Sữa lắc muối ớt", Detail = "Chi tiết sản phẩm", Price = 900000, PriceSale = 65000, IsSale = true, IsActive = true, IsFeature = true },
-                new Product { Title = "Heo treo nóc nhà", Detail = "Chi tiết sản phẩm", Price = 900000, PriceSale = 65000, IsSale = true, IsActive = true, IsFeature = true },
-                new Product { Title = "Đậu hũ ngàn năm", Detail = "Chi tiết sản phẩm", Price = 900000, PriceSale = 65000, IsSale = true, IsActive = true, IsFeature = true },
-                new Product { Title = "Món ăn 0", Detail = "Chi tiết sản phẩm", Price = 900000, PriceSale = 65000, IsSale = true, IsActive = true, IsFeature = true },
-                new Product { Title = "Món ăn 0", Detail = "Chi tiết sản phẩm", Price = 900000, PriceSale = 65000, IsSale = true, IsActive = true, IsFeature = true }
+                new Product { Title = "Mì thanh long", Detail = "Chi tiết sản phẩm", Price = 50000, IsActive = true, IsFeature = true, IsHome = true },
+                new Product { Title = "Cơm xoài", Detail = "Chi tiết sản phẩm", Price = 900000,  IsActive = true, IsFeature = true, IsHome = true},
+                new Product { Title = "Xôi lạnh", Detail = "Chi tiết sản phẩm", Price = 900000, IsActive = true, IsFeature = true , IsHome = true},
+                new Product { Title = "Kem mắm ruốc", Detail = "Chi tiết sản phẩm", Price = 900000, IsActive = true, IsFeature = true, IsHome = true},
+                new Product { Title = "Sữa lắc muối ớt", Detail = "Chi tiết sản phẩm", Price = 900000, IsActive = true, IsFeature = true, IsHome = true },
+                new Product { Title = "Heo treo nóc nhà", Detail = "Chi tiết sản phẩm", Price = 900000, IsActive = true, IsFeature = true, IsHome = true },
+                new Product { Title = "Đậu hũ ngàn năm", Detail = "Chi tiết sản phẩm", Price = 900000, IsActive = true, IsFeature = true, IsHome = true },
+                new Product { Title = "Món ăn 0", Detail = "Chi tiết sản phẩm", Price = 900000, IsActive = true, IsFeature = true, IsHome = true },
+                new Product { Title = "Món ăn 0", Detail = "Chi tiết sản phẩm", Price = 900000, IsActive = true, IsFeature = true, IsHome = true }
             };
 
             // thêm hoặc cập nhật sản phẩm in the context

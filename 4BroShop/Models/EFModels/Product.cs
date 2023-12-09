@@ -31,10 +31,8 @@ namespace _4BroShop.Models.EFModels
         //giá bán
         public decimal Price { get; set; }
         //giá sau khi giảm (có thể null)
-        public decimal? PriceSale { get; set; }
         //public int ViewCount { get; set; }
         public bool IsHome { get; set; }
-        public bool IsSale { get; set; }
         public bool IsFeature { get; set; }
         public bool IsActive { get; set; }
         public int CategoryId { get; set; }

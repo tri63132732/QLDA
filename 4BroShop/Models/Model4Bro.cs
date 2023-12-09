@@ -1,3 +1,4 @@
+using _4BroShop.Models.EFModels;
 using System;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Data.Entity;
