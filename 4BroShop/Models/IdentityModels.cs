@@ -25,8 +25,6 @@ namespace _4BroShop.Models
             : base("DefaultConnection", throwIfV1Schema: false)
         {
             //seed
-            Database.SetInitializer(new _4BroShop.DAL._4BroShopInitializer());
-
         }
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
@@ -44,7 +42,7 @@ namespace _4BroShop.Models
                .HasColumnName("UserId");*/
         }
         public DbSet<Category> Categories { get; set; }
-        public DbSet<ProductCategory> ProductCategories { get; set; }
+
         public DbSet<Product> Products { get; set; }
         public DbSet<ProductImage> ProductImages { get; set; }
         public DbSet<Contact> Contacts { get; set; }

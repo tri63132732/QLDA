@@ -9,7 +9,7 @@ using System.Web.Mvc;
 namespace _4BroShop.Models.EFModels
 {
     [Table("Product")]
-    public class Product : CommonAbstract
+    public class Product
     {
         public Product()
         {
@@ -31,15 +31,13 @@ namespace _4BroShop.Models.EFModels
         //giá bán
         public decimal Price { get; set; }
         //giá sau khi giảm (có thể null)
-        public decimal? PriceSale { get; set; }
         //public int ViewCount { get; set; }
         public bool IsHome { get; set; }
-        public bool IsSale { get; set; }
         public bool IsFeature { get; set; }
         public bool IsActive { get; set; }
-        public int ProductCategoryId { get; set; }
+        public int CategoryId { get; set; }
 
-        public virtual ProductCategory ProductCategory { get; set; }
+        public virtual Category ProductCategory { get; set; }
         public virtual ICollection<ProductImage> ProductImage { get; set; }
         public virtual ICollection<OrderDetail> OrderDetails { get; set; }
     }
