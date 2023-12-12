@@ -177,9 +177,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202312050530116_4BroDbv1.cs" />
-    <Compile Include="Migrations\202312050530116_4BroDbv1.designer.cs">
-      <DependentUpon>202312050530116_4BroDbv1.cs</DependentUpon>
+    <Compile Include="Migrations\202312090840368_Db4BroShop.cs" />
+    <Compile Include="Migrations\202312090840368_Db4BroShop.designer.cs">
+      <DependentUpon>202312090840368_Db4BroShop.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -190,11 +190,9 @@
     <Compile Include="Models\EFModels\OrderDetail.cs" />
     <Compile Include="Models\EFModels\Product.cs" />
     <Compile Include="Models\EFModels\Category.cs" />
-    <Compile Include="Models\EFModels\ProductImage.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\Login.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
-    <Compile Include="Models\Model4Bro.cs" />
     <Compile Include="Models\Role.cs" />
     <Compile Include="Models\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -228,7 +226,8 @@
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Areas\Admin\Views\web.config" />
-    <Content Include="Areas\Admin\Views\Shared\_LayoutAdmin.cshtml" />
+    <Content Include="Areas\Admin\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\Admin\Views\Shared\_Layout.cshtml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -322,8 +321,8 @@
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202312050530116_4BroDbv1.resx">
-      <DependentUpon>202312050530116_4BroDbv1.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202312090840368_Db4BroShop.resx">
+      <DependentUpon>202312090840368_Db4BroShop.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

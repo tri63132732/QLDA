@@ -41,13 +41,12 @@ namespace _4BroShop.Models
                .Property(u => u.Id)
                .HasColumnName("UserId");*/
         }
-        public DbSet<Category> Categories { get; set; }
+        public DbSet<Category> Category { get; set; }
 
-        public DbSet<Product> Products { get; set; }
-        public DbSet<ProductImage> ProductImages { get; set; }
-        public DbSet<Contact> Contacts { get; set; }
-        public DbSet<Order> Orders { get; set; }
-        public DbSet<OrderDetail> OrderDetails { get; set; }
+        public DbSet<Product> Product { get; set; }
+        public DbSet<Contact> Contact { get; set; }
+        public DbSet<Order> Order { get; set; }
+        public DbSet<OrderDetail> OrderDetail { get; set; }
         public static ApplicationDbContext Create()
         {
             return new ApplicationDbContext();
