@@ -8,7 +8,7 @@ using System.Web;
 namespace _4BroShop.Models.EFModels
 {
     [Table("Contact")]
-    public class Contact : CommonAbstract
+    public class Contact
     {
         [Key]
         [DatabaseGeneratedAttribute(DatabaseGeneratedOption.Identity)]

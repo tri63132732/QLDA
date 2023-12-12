@@ -8,7 +8,7 @@ using System.Web;
 namespace _4BroShop.Models.EFModels
 {
     [Table("Order")]
-    public class Order : CommonAbstract
+    public class Order
     {
         public Order()
         {
@@ -28,7 +28,6 @@ namespace _4BroShop.Models.EFModels
         public string Email { get; set; }
         public decimal TotalAmount { get; set; }
         public int Quantity { get; set; }
-        public int TypePayment { get; set; }
         public virtual ICollection<OrderDetail> OrderDetails { get; set; }
     }
 }
