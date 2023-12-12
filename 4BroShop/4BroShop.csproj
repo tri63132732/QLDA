@@ -178,9 +178,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202312090840368_Db4BroShop.cs" />
-    <Compile Include="Migrations\202312090840368_Db4BroShop.designer.cs">
-      <DependentUpon>202312090840368_Db4BroShop.cs</DependentUpon>
+    <Compile Include="Migrations\202312120830373_Db4BroShopv1.cs" />
+    <Compile Include="Migrations\202312120830373_Db4BroShopv1.designer.cs">
+      <DependentUpon>202312120830373_Db4BroShopv1.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -231,7 +231,6 @@
     <Content Include="Areas\Admin\Views\Shared\_Layout.cshtml" />
     <Content Include="Areas\Admin\Views\Categories\Create.cshtml" />
     <Content Include="Areas\Admin\Views\Categories\Delete.cshtml" />
-    <Content Include="Areas\Admin\Views\Categories\Details.cshtml" />
     <Content Include="Areas\Admin\Views\Categories\Edit.cshtml" />
     <Content Include="Areas\Admin\Views\Categories\Index.cshtml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
@@ -326,8 +325,8 @@
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202312090840368_Db4BroShop.resx">
-      <DependentUpon>202312090840368_Db4BroShop.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202312120830373_Db4BroShopv1.resx">
+      <DependentUpon>202312120830373_Db4BroShopv1.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

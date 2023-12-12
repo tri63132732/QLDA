@@ -3,11 +3,11 @@
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class Db4BroShop : DbMigration
+    public partial class Db4BroShopv1 : DbMigration
     {
         public override void Up()
         {
-        CreateTable(
+            CreateTable(
                 "dbo.Category",
                 c => new
                     {

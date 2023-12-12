@@ -432,8 +432,6 @@ C:\Users\DELL\Downloads\QLDA\QLDA\4BroShop\obj\Debug\4BroShop.dll
 C:\Users\DELL\Downloads\QLDA\QLDA\4BroShop\obj\Debug\4BroShop.pdb
 C:\Users\DELL\Downloads\QLDA\QLDA\4BroShop\obj\Debug\_4BroShop.Migrations._4BroDbv1.resources
 C:\Users\DELL\Downloads\QLDA\QLDA\4BroShop\obj\Debug\4BroShop.csproj.GenerateResource.cache
-D:\QLDA\4BroShop\obj\Debug\_4BroShop.Migrations.Db4BroShop.resources
-D:\QLDA\4BroShop\obj\Debug\4BroShop.csproj.GenerateResource.cache
 C:\Users\DELL\Downloads\QLDA-main\4BroShop\bin\4BroShop.dll.config
 C:\Users\DELL\Downloads\QLDA-main\4BroShop\bin\4BroShop.dll
 C:\Users\DELL\Downloads\QLDA-main\4BroShop\bin\4BroShop.pdb
@@ -544,3 +542,5 @@ C:\Users\DELL\Downloads\QLDA-main\4BroShop\obj\Debug\4BroShop.csproj.CoreCompile
 C:\Users\DELL\Downloads\QLDA-main\4BroShop\obj\Debug\4BroShop.csproj.CopyComplete
 C:\Users\DELL\Downloads\QLDA-main\4BroShop\obj\Debug\4BroShop.dll
 C:\Users\DELL\Downloads\QLDA-main\4BroShop\obj\Debug\4BroShop.pdb
+D:\QLDA\4BroShop\obj\Debug\_4BroShop.Migrations.Db4BroShopv1.resources
+D:\QLDA\4BroShop\obj\Debug\4BroShop.csproj.GenerateResource.cache

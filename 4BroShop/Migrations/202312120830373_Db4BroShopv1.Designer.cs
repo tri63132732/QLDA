@@ -7,13 +7,13 @@ namespace _4BroShop.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.4.4")]
-    public sealed partial class Db4BroShop : IMigrationMetadata
+    public sealed partial class Db4BroShopv1 : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(Db4BroShop));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(Db4BroShopv1));
         
         string IMigrationMetadata.Id
         {
-            get { return "202312090840368_Db4BroShop"; }
+            get { return "202312120830373_Db4BroShopv1"; }
         }
         
         string IMigrationMetadata.Source
