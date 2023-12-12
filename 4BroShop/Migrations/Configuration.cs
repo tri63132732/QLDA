@@ -9,6 +9,7 @@
     using System.Data.Entity.Migrations;
     using System.Linq;
     using _4BroShop.Models.EFModels;
+    using System.Data.Entity.Validation;
 
     internal sealed class Configuration : DbMigrationsConfiguration<_4BroShop.Models.ApplicationDbContext>
     {
@@ -24,59 +25,56 @@
             //  You can use the DbSet<T>.AddOrUpdate() helper extension method
             //  to avoid creating duplicate seed data.
             //Date=DateTime.Parse("năm-tháng-ngày")
-            List<Category> categories = new List<Category>
+            List<Category> Categories = new List<Category>
             {
-                new Category { Title = "Cơm", IsActive = true },
-                new Category { Title = "Mì", IsActive = true }
+                new Category {Id = 1, Title = "Cơm", Icon = "com.png", IsActive = true},
+                new Category {Id = 2, Title = "Mì", Icon = "mi.png", IsActive = true }
             };
-            foreach (var category in categories)
+            foreach (var category in Categories)
             {
-                context.Categories.AddOrUpdate(
+                context.Category.AddOrUpdate(
                     c => c.Title,
-                    category
+                    Categories.ToArray()
                 );
             }
+            context.Category.AddRange(Categories);
 
-            List<Product> productsToAddOrUpdate = new List<Product>
+            List<Product> Products = new List<Product>
             {
-                new Product { Title = "Mì thanh long", Detail = "Chi tiết sản phẩm", Price = 50000, IsActive = true, IsFeature = true, IsHome = true },
-                new Product { Title = "Cơm xoài", Detail = "Chi tiết sản phẩm", Price = 900000,  IsActive = true, IsFeature = true, IsHome = true},
-                new Product { Title = "Xôi lạnh", Detail = "Chi tiết sản phẩm", Price = 900000, IsActive = true, IsFeature = true , IsHome = true},
-                new Product { Title = "Kem mắm ruốc", Detail = "Chi tiết sản phẩm", Price = 900000, IsActive = true, IsFeature = true, IsHome = true},
-                new Product { Title = "Sữa lắc muối ớt", Detail = "Chi tiết sản phẩm", Price = 900000, IsActive = true, IsFeature = true, IsHome = true },
-                new Product { Title = "Heo treo nóc nhà", Detail = "Chi tiết sản phẩm", Price = 900000, IsActive = true, IsFeature = true, IsHome = true },
-                new Product { Title = "Đậu hũ ngàn năm", Detail = "Chi tiết sản phẩm", Price = 900000, IsActive = true, IsFeature = true, IsHome = true },
-                new Product { Title = "Món ăn 0", Detail = "Chi tiết sản phẩm", Price = 900000, IsActive = true, IsFeature = true, IsHome = true },
-                new Product { Title = "Món ăn 0", Detail = "Chi tiết sản phẩm", Price = 900000, IsActive = true, IsFeature = true, IsHome = true }
+                new Product {Id = 1, Title = "Mì thanh long", Detail = "Chi tiết sản phẩm", Price = 50000, IsActive = true, IsFeature = true, IsHome = true, CategoryId = 2},
+                new Product {Id = 2, Title = "Cơm xoài", Detail = "Chi tiết sản phẩm", Price = 900000,  IsActive = true, IsFeature = true, IsHome = true, CategoryId = 1},
+                new Product {Id = 3,  Title = "Xôi lạnh", Detail = "Chi tiết sản phẩm", Price = 900000, IsActive = true, IsFeature = true , IsHome = true},
+                new Product {Id = 4, Title = "Kem mắm ruốc", Detail = "Chi tiết sản phẩm", Price = 900000, IsActive = true, IsFeature = true, IsHome = true},
+                new Product {Id = 5, Title = "Sữa lắc muối ớt", Detail = "Chi tiết sản phẩm", Price = 900000, IsActive = true, IsFeature = true, IsHome = true },
+                new Product {Id = 6, Title = "Heo treo nóc nhà", Detail = "Chi tiết sản phẩm", Price = 900000, IsActive = true, IsFeature = true, IsHome = true },
+                new Product {Id = 7, Title = "Đậu hũ ngàn năm", Detail = "Chi tiết sản phẩm", Price = 900000, IsActive = true, IsFeature = true, IsHome = true },
+                new Product {Id = 8, Title = "Món ăn 0", Detail = "Chi tiết sản phẩm", Price = 900000, IsActive = true, IsFeature = true, IsHome = true },
+                new Product {Id = 9, Title = "Món ăn 0", Detail = "Chi tiết sản phẩm", Price = 900000, IsActive = true, IsFeature = true, IsHome = true }
             };
 
             // thêm hoặc cập nhật sản phẩm in the context
-            context.Products.AddOrUpdate(
-                p => p.Id,
-                productsToAddOrUpdate.ToArray()
-            );
-
-            //
-            var userManager = new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(context));
-            var roleManager = new RoleManager<IdentityRole>(new RoleStore<IdentityRole>(context));
-
-            // Tạo vai trò Admin nếu nó chưa tồn tại
-            if (!roleManager.RoleExists("Admin"))
+            foreach (var product in Products)
             {
-                var role = new IdentityRole();
-                role.Name = "Admin";
-                roleManager.Create(role);
+                context.Product.AddOrUpdate(
+                    p => p.Id,
+                    product
+                );
             }
-
-            var adminUser = new ApplicationUser { UserName = "admin", Email = "dat.nth.63cntt@ntu.edu.vn", PhoneNumber = "0904746501", LockoutEnabled = false };
-            var result = userManager.Create(adminUser, "Admin@123456");
-
-            if (result.Succeeded)
+            context.Product.AddRange(Products);
+            try
             {
-                // Gán vai trò "admin" cho người dùng admin
-                userManager.AddToRole(adminUser.Id, "Admin");
+                context.SaveChanges();
             }
-            context.SaveChanges();
+            catch (DbEntityValidationException ex)
+            {
+                foreach (var validationErrors in ex.EntityValidationErrors)
+                {
+                    foreach (var validationError in validationErrors.ValidationErrors)
+                    {
+                        Console.WriteLine($"Property: {validationError.PropertyName} Error: {validationError.ErrorMessage}");
+                    }
+                }
+            }
         }
     }
 }

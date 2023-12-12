@@ -14,18 +14,22 @@ namespace _4BroShop.Models.EFModels
         {
             this.Products = new HashSet<Product>();
         }
+
         [Key]
         [DatabaseGeneratedAttribute(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
+
         [Required]
         [StringLength(150)]
         public string Title { get; set; }
+
         [Required]
         [StringLength(250)]
         public string Icon { get; set; }
-        public bool IsActive { get; set; }
-        [StringLength(250)]
 
+        public bool IsActive { get; set; }
+
+        // Một Category chứa nhiều Product
         public ICollection<Product> Products { get; set; }
     }
 }
