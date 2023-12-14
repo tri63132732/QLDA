@@ -4,8 +4,6 @@
     ViewBag.Title = "Edit";
 }
 
-<h2>Edit</h2>
-
 
 @using (Html.BeginForm())
 {
@@ -47,14 +45,7 @@
                 @Html.ValidationMessageFor(model => model.Price, "", new { @class = "text-danger" })
             </td>
         </tr>
-        <tr>
-            <td style="float: right"><b>@Html.LabelFor(model => model.PriceSale, "Giá bán")</b></td>
-            <td>&nbsp;&nbsp;&nbsp;</td>
-            <td>
-                @Html.EditorFor(model => model.PriceSale, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.PriceSale, "", new { @class = "text-danger" })
-            </td>
-        </tr>
+
         <tr>
             <td style="float: right"><b>@Html.LabelFor(model => model.IsHome, "Là nhà")</b></td>
             <td>&nbsp;&nbsp;&nbsp;</td>
@@ -63,14 +54,7 @@
                 @Html.ValidationMessageFor(model => model.IsHome, "", new { @class = "text-danger" })
             </td>
         </tr>
-        <tr>
-            <td style="float: right"><b>@Html.LabelFor(model => model.IsSale, "Là bán")</b></td>
-            <td>&nbsp;&nbsp;&nbsp;</td>
-            <td class="checkbox">
-                @Html.EditorFor(model => model.IsSale)
-                @Html.ValidationMessageFor(model => model.IsSale, "", new { @class = "text-danger" })
-            </td>
-        </tr>
+
         <tr>
             <td style="float: right"><b>@Html.LabelFor(model => model.IsFeature, "Là tính năng")</b></td>
             <td>&nbsp;&nbsp;&nbsp;</td>
@@ -80,10 +64,18 @@
             </td>
         </tr>
         <tr>
+            <td style="float: right"><b>@Html.LabelFor(model => model.IsActive, "Là hoạt động")</b></td>
+            <td>&nbsp;&nbsp;&nbsp;</td>
+            <td class="checkbox">
+                @Html.EditorFor(model => model.IsActive)
+                @Html.ValidationMessageFor(model => model.IsActive, "", new { @class = "text-danger" })
+            </td>
+        </tr>
+        <tr>
             <td style="float: right"><b>@Html.LabelFor(model => model.CategoryId, "Mã sản phẩm")</b></td>
             <td>&nbsp;&nbsp;&nbsp;</td>
             <td>
-                @Html.EditorFor(model => model.CategoryId, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.DropDownList("CategoryId", null, htmlAttributes: new { @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.CategoryId, "", new { @class = "text-danger" })
             </td>
         </tr>

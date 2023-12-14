@@ -1,9 +1,11 @@
 ﻿@model _4BroShop.Models.EFModels.Product
 
 @{
-    ViewBag.Title = "Details";
+    ViewBag.Title = "Delete";
 }
 
+
+<h4 style="color:red;"> Bạn có chắc chắn xóa thông tin này?</h4>
 <table border="0" cellpadding="0" cellspacing="0" style="font-size:14px;margin-left:50px;">
     <tr>
         <td>
@@ -26,14 +28,20 @@
                 </tr>
                 <tr>
                     <td>Giá bán:</td>
-                    <td>@Html.DisplayFor(model => model.PriceSale)</td>
+                    <td>@Html.DisplayFor(model => model.Price)</td>
                 </tr>
 
             </table>
         </td>
     </tr>
 </table>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
-    @Html.ActionLink("Quay lại", "Index")
-</p>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-actions no-color" style="margin-left:50px;">
+        <input type="submit" value="Xóa" class="btn btn-default" /> |
+        @Html.ActionLink("Quay lại", "Index")
+    </div>
+}
