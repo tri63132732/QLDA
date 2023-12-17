@@ -237,21 +237,45 @@ namespace _4BroShop.Areas.Admin.Controllers
 
             return View(user);
         }
-        public async Task<ActionResult> AssignRole(string userId, string roleName)
+        public async Task<ActionResult> Delete(string id)
         {
-            var user = await _userManager.FindByIdAsync(userId);
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+
+            var user = await UserManager.FindByIdAsync(id);
 
             if (user == null)
             {
                 return HttpNotFound();
             }
 
-            if (!await _userManager.IsInRoleAsync(userId, roleName))
+            return View(user);
+        }
+
+        [HttpPost, ActionName("Delete")]
+        [ValidateAntiForgeryToken]
+        public async Task<ActionResult> DeleteConfirmed(string id)
+        {
+            var user = await UserManager.FindByIdAsync(id);
+
+            if (user == null)
             {
-                await _userManager.AddToRoleAsync(userId, roleName);
+                return HttpNotFound();
             }
 
-            return RedirectToAction("Index", "Home"); // Redirect to a suitable page after assigning the role
+            var result = await UserManager.DeleteAsync(user);
+
+            if (result.Succeeded)
+            {
+                // Xóa thành công, chuyển hướng về trang danh sách người dùng hoặc trang chính của quản lý tài khoản
+                return RedirectToAction("Index");
+            }
+
+            // Nếu có lỗi xảy ra trong quá trình xóa
+            AddErrors(result);
+            return View(user); // Hiển thị lại trang xóa với thông báo lỗi
         }
         private IAuthenticationManager AuthenticationManager
         {
