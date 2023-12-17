@@ -1,0 +1,11 @@
+﻿@using Microsoft.AspNet.Identity.EntityFramework
+@model IdentityRole
+
+<h2>Xóa Quyền</h2>
+<p>Bạn có chắc chắn muốn xóa quyền "@Model.Name" không?</p>
+
+<form asp-action="DeleteConfirmed" asp-controller="Role" asp-route-id="@Model.Id" method="post">
+    @Html.AntiForgeryToken()
+    <button type="submit" class="btn btn-danger">Xóa</button>
+    <a asp-action="Index" asp-controller="Role" class="btn btn-secondary">Hủy</a>
+</form>

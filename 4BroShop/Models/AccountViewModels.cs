@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-
+using System.Web.Mvc;
 namespace _4BroShop.Models
 {
     public class ExternalLoginConfirmationViewModel
@@ -61,7 +61,65 @@ namespace _4BroShop.Models
         [Display(Name = "Remember me?")]
         public bool RememberMe { get; set; }
     }
+    public class CreateAccountViewModel
+    {
+        [Required(ErrorMessage = "Tên người dùng là bắt buộc.")]
+        [Display(Name = "Tên người dùng")]
+        public string UserName { get; set; }
 
+        [Required(ErrorMessage = "Họ và tên là bắt buộc.")]
+        [Display(Name = "Họ và tên")]
+        public string FullName { get; set; }
+
+        [Display(Name = "Số điện thoại")]
+        public string Phone { get; set; }
+
+        [Required(ErrorMessage = "Email là bắt buộc.")]
+        [EmailAddress(ErrorMessage = "Email không hợp lệ.")]
+        [Display(Name = "Email")]
+        public string Email { get; set; }
+
+        [Required(ErrorMessage = "Mật khẩu là bắt buộc.")]
+        [StringLength(100, ErrorMessage = "Mật khẩu phải có ít nhất {2} ký tự.", MinimumLength = 6)]
+        [DataType(DataType.Password)]
+        [Display(Name = "Mật khẩu")]
+        public string Password { get; set; }
+
+        [DataType(DataType.Password)]
+        [Display(Name = "Xác nhận mật khẩu")]
+        [System.ComponentModel.DataAnnotations.Compare("Password", ErrorMessage = "Mật khẩu và xác nhận mật khẩu không khớp.")]
+        public string ConfirmPassword { get; set; }
+
+        // Thuộc tính Role nếu cần
+        [Display(Name = "Vai trò")]
+        public string Role { get; set; }
+    }
+    public class EditAccountViewModel
+    {
+        public string Id { get; set; }
+        [Required(ErrorMessage = "Tên người dùng là bắt buộc.")]
+        [Display(Name = "Tên người dùng")]
+        public string UserName { get; set; }
+
+        [Required(ErrorMessage = "Họ và tên là bắt buộc.")]
+        [Display(Name = "Họ và tên")]
+        public string FullName { get; set; }
+
+        [Display(Name = "Số điện thoại")]
+        public string Phone { get; set; }
+
+        [Required(ErrorMessage = "Email là bắt buộc.")]
+        [EmailAddress(ErrorMessage = "Email không hợp lệ.")]
+        [Display(Name = "Email")]
+        public string Email { get; set; }
+        [Required(ErrorMessage = "Địa chí là bắt buộc.")]
+        [Display(Name = "Địa chỉ")]
+        public string Address { get; set; }
+        public IEnumerable<SelectListItem> Roles { get; set; }
+
+        [Display(Name = "Vai trò")]
+        public string SelectedRole { get; set; }
+    }
     public class RegisterViewModel
     {
         [Required]
@@ -77,7 +135,7 @@ namespace _4BroShop.Models
 
         [DataType(DataType.Password)]
         [Display(Name = "Confirm password")]
-        [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
+        [System.ComponentModel.DataAnnotations.Compare("ConfirmPassword", ErrorMessage = "The new password and confirmation password do not match.")]
         public string ConfirmPassword { get; set; }
     }
 
@@ -96,7 +154,7 @@ namespace _4BroShop.Models
 
         [DataType(DataType.Password)]
         [Display(Name = "Confirm password")]
-        [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
+        [System.ComponentModel.DataAnnotations.Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
         public string ConfirmPassword { get; set; }
 
         public string Code { get; set; }

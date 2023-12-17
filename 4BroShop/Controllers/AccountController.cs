@@ -79,7 +79,23 @@ namespace _4BroShop.Controllers
             switch (result)
             {
                 case SignInStatus.Success:
-                    return RedirectToLocal(returnUrl);
+
+                    var user = await UserManager.FindByEmailAsync(model.Email);
+
+                    if (user != null)
+                    {
+                        if (UserManager.IsInRole(user.Id, "Admin"))
+                        {
+                            // Nếu có, chuyển hướng đến trang Admin
+                            return RedirectToAction("Index", "Admin", new { area = "Admin" });
+                        }
+
+                        // Nếu không, chuyển hướng đến trang đã được chỉ định (returnUrl)
+                        return RedirectToLocal(returnUrl);
+                    }
+                    //không tìm thấy user
+                    return View("Error");
+
                 case SignInStatus.LockedOut:
                     return View("Lockout");
                 case SignInStatus.RequiresVerification:

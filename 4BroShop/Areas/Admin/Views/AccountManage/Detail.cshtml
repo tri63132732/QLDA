@@ -1,0 +1,28 @@
+﻿@model _4BroShop.Models.ApplicationUser
+
+<h2>User Details</h2>
+
+<div class="card">
+    <div class="card-body">
+        <h5 class="card-title">User Information</h5>
+        <form>
+            <div class="mb-3">
+                <label for="userId" class="form-label">User ID:</label>
+                <input type="text" class="form-control" id="userId" value="@Model.Id" readonly>
+            </div>
+            <div class="mb-3">
+                <label for="email" class="form-label">Email:</label>
+                <input type="email" class="form-control" id="email" value="@Model.Email" readonly>
+            </div>
+            <div class="mb-3">
+                <label for="fullName" class="form-label">Full Name:</label>
+                <input type="text" class="form-control" id="fullName" value="@Model.FullName" readonly>
+            </div>
+            <div class="mb-3">
+                <label for="phone" class="form-label">Phone:</label>
+                <input type="text" class="form-control" id="phone" value="@Model.PhoneNumber" readonly>
+            </div>
+            <!-- Các trường thông tin khác bạn muốn hiển thị -->
+        </form>
+    </div>
+</div>
