@@ -41,15 +41,15 @@
 
             List<Product> Products = new List<Product>
             {
-                new Product {Id = 1, Title = "Mì thanh long", Detail = "Chi tiết sản phẩm", Price = 50000, IsActive = true, IsFeature = true, IsHome = true, CategoryId = 2},
+                new Product {Id = 1, Title = "Mì thanh long", Detail = "Chi tiết sản phẩm", Price = 50000, IsActive = true, IsFeature = true, IsHome = true, CategoryId = 1},
                 new Product {Id = 2, Title = "Cơm xoài", Detail = "Chi tiết sản phẩm", Price = 900000,  IsActive = true, IsFeature = true, IsHome = true, CategoryId = 1},
-                new Product {Id = 3,  Title = "Xôi lạnh", Detail = "Chi tiết sản phẩm", Price = 900000, IsActive = true, IsFeature = true , IsHome = true},
-                new Product {Id = 4, Title = "Kem mắm ruốc", Detail = "Chi tiết sản phẩm", Price = 900000, IsActive = true, IsFeature = true, IsHome = true},
-                new Product {Id = 5, Title = "Sữa lắc muối ớt", Detail = "Chi tiết sản phẩm", Price = 900000, IsActive = true, IsFeature = true, IsHome = true },
-                new Product {Id = 6, Title = "Heo treo nóc nhà", Detail = "Chi tiết sản phẩm", Price = 900000, IsActive = true, IsFeature = true, IsHome = true },
-                new Product {Id = 7, Title = "Đậu hũ ngàn năm", Detail = "Chi tiết sản phẩm", Price = 900000, IsActive = true, IsFeature = true, IsHome = true },
-                new Product {Id = 8, Title = "Món ăn 0", Detail = "Chi tiết sản phẩm", Price = 900000, IsActive = true, IsFeature = true, IsHome = true },
-                new Product {Id = 9, Title = "Món ăn 0", Detail = "Chi tiết sản phẩm", Price = 900000, IsActive = true, IsFeature = true, IsHome = true }
+                new Product {Id = 3,  Title = "Xôi lạnh", Detail = "Chi tiết sản phẩm", Price = 900000, IsActive = true, IsFeature = true , IsHome = true, CategoryId = 1},
+                new Product {Id = 4, Title = "Kem mắm ruốc", Detail = "Chi tiết sản phẩm", Price = 900000, IsActive = true, IsFeature = true, IsHome = true, CategoryId = 1},
+                new Product {Id = 5, Title = "Sữa lắc muối ớt", Detail = "Chi tiết sản phẩm", Price = 900000, IsActive = true, IsFeature = true, IsHome = true , CategoryId = 1},
+                new Product {Id = 6, Title = "Heo treo nóc nhà", Detail = "Chi tiết sản phẩm", Price = 900000, IsActive = true, IsFeature = true, IsHome = true , CategoryId = 1},
+                new Product {Id = 7, Title = "Đậu hũ ngàn năm", Detail = "Chi tiết sản phẩm", Price = 900000, IsActive = true, IsFeature = true, IsHome = true , CategoryId = 1},
+                new Product {Id = 8, Title = "Món ăn 0", Detail = "Chi tiết sản phẩm", Price = 900000, IsActive = true, IsFeature = true, IsHome = true , CategoryId = 1},
+                new Product {Id = 9, Title = "Món ăn 0", Detail = "Chi tiết sản phẩm", Price = 900000, IsActive = true, IsFeature = true, IsHome = true , CategoryId = 1}
             };
 
             // thêm hoặc cập nhật sản phẩm in the context

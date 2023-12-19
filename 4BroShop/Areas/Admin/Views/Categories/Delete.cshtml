@@ -1,4 +1,4 @@
-﻿@model _4BroShop.Models.EFModels.Product
+﻿@model _4BroShop.Models.EFModels.Category
 
 @{
     ViewBag.Title = "Delete";
@@ -11,23 +11,18 @@
             <b>THÔNG TIN CHI TIẾT</b>
             <table cellpadding="2" cellspacing="10">
                 <tr>
-                    <td rowspan="8"><img src="/Images/@Html.DisplayFor(model => model.Image)" width="100" height="100" /></td>
-                    <td>Mã sản phẩm:</td>
-                    <td>@Html.DisplayFor(model => model.CategoryId)</td>
-                </tr>
-                <tr>
-                    <td>Tên sản phẩm:</td>
+                    <td>Tên loại:</td>
                     <td>@Html.DisplayFor(model => model.Title)</td>
                 </tr>
                 <tr>
-                    <td>Chi tiết:</td>
+                    <td>Icon:</td>
                     <td>
-                        @Html.DisplayFor(model => model.Detail)
+                        @Html.DisplayFor(model => model.Icon)
                     </td>
                 </tr>
                 <tr>
-                    <td>Giá bán:</td>
-                    <td>@Html.DisplayFor(model => model.PriceSale)</td>
+                    <td>Là:</td>
+                    <td>@Html.DisplayFor(model => model.IsActive)</td>
                 </tr>
 
             </table>

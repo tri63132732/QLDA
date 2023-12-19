@@ -1,0 +1,95 @@
+﻿@model _4BroShop.Models.EFModels.Product
+
+@{
+    ViewBag.Title = "Create";
+}
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    <h4>Sản phẩm</h4>
+    <hr />
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+<table style="margin-left:50px">
+    <tr>
+        <td style="float: right"><b>@Html.LabelFor(model => model.Title, "Tên sản phẩm")</b></td>
+        <td>&nbsp;&nbsp;&nbsp;</td>
+        <td>
+            @Html.EditorFor(model => model.Title, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.Title, "", new { @class = "text-danger" })
+        </td>
+    </tr>
+    <tr>
+        <td style="float: right"><b>@Html.LabelFor(model => model.Detail, "Chi tiết")</b></td>
+        <td>&nbsp;&nbsp;&nbsp;</td>
+        <td>
+            @Html.EditorFor(model => model.Detail, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.Detail, "", new { @class = "text-danger" })
+        </td>
+    </tr>
+    <tr>
+        <td style="float: right"><b>@Html.LabelFor(model => model.Image, "Ảnh minh họa")</b></td>
+        <td>&nbsp;&nbsp;&nbsp;</td>
+        <td>
+            <input type="file" style="height:30px;" name="Avatar" accept="image/*" required />
+            @Html.ValidationMessageFor(model => model.Image, "", new { @class = "text-danger" })
+        </td>
+    </tr>
+    <tr>
+        <td style="float: right"><b>@Html.LabelFor(model => model.Price, "Giá")</b></td>
+        <td>&nbsp;&nbsp;&nbsp;</td>
+        <td>
+            @Html.EditorFor(model => model.Price, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.Price, "", new { @class = "text-danger" })
+        </td>
+    </tr>
+
+    <tr>
+        <td style="float: right"><b>@Html.LabelFor(model => model.IsHome, "Là nhà")</b></td>
+        <td>&nbsp;&nbsp;&nbsp;</td>
+        <td class="checkbox">
+            @Html.EditorFor(model => model.IsHome)
+            @Html.ValidationMessageFor(model => model.IsHome, "", new { @class = "text-danger" })
+        </td>
+    </tr>
+
+    <tr>
+        <td style="float: right"><b>@Html.LabelFor(model => model.IsFeature, "Là tính năng")</b></td>
+        <td>&nbsp;&nbsp;&nbsp;</td>
+        <td class="checkbox">
+            @Html.EditorFor(model => model.IsFeature)
+            @Html.ValidationMessageFor(model => model.IsFeature, "", new { @class = "text-danger" })
+        </td>
+    </tr>
+    <tr>
+        <td style="float: right"><b>@Html.LabelFor(model => model.IsActive, "Là hoạt động")</b></td>
+        <td>&nbsp;&nbsp;&nbsp;</td>
+        <td class="checkbox">
+            @Html.EditorFor(model => model.IsActive)
+            @Html.ValidationMessageFor(model => model.IsActive, "", new { @class = "text-danger" })
+        </td>
+    </tr>
+    <tr>
+        <td style="float: right"><b>@Html.LabelFor(model => model.CategoryId, "Mã sản phẩm")</b></td>
+        <td>&nbsp;&nbsp;&nbsp;</td>
+        <td>
+            @Html.DropDownList("CategoryId", null, htmlAttributes: new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.CategoryId, "", new { @class = "text-danger" })
+        </td>
+    </tr>
+
+
+
+    <tr>
+        <td style="float: right"><b></b></td>
+        <td>&nbsp;&nbsp;&nbsp;</td>
+        <td>
+            <input type="submit" value="Tạo" class="btn btn-default" />
+        </td>
+    </tr>
+</table>
+}
+
+<div>
+    @Html.ActionLink("Quay lại", "Index")
+</div>
